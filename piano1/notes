@@ -1,0 +1,131 @@
+https://www.codewars.com/kata/piano-kata-part-1/go
+
+
+Your Function
+
+The function you are going to write is not actually going to help you with your piano playing, but just explore one of the patterns you're experiencing: Given the number you stopped on, was it on a black key or a white key? For example, in the description of your piano exercise above, if you stopped at 5, your left thumb would be on the fifth key of the piano, which is black. Or if you stopped at 92, you would have gone all the way from keys 1 to 88 and then wrapped around, so that you would be on the fourth key, which is white.
+
+Your function will receive an integer between 1 and 10000 (maybe you think that in principle it would be cool to count up to, say, a billion, but considering how many years it would take it is just not possible) and return the string "black" or "white" -- here are a few more examples:
+
+1     "white"
+12    "black"
+42    "white"
+100   "black"
+2017  "white"
+
+
+Determine the pattern of white keys and black keys
+
+w,b,w
+w,b,w,b,w
+w,b,w,b,w,b,w
+w,b,w,b,w
+w,b,w,b,w,b,w
+w,b,w,b,w
+w,b,w,b,w,b,w
+w,b,w,b,w
+w,b,w,b,w,b,w
+w,b,w,b,w
+w,b,w,b,w,b,w
+w,b,w,b,w
+w,b,w,b,w,b,w
+w,b,w,b,w
+w,b,w,b,w,b,w
+w
+
+so...
+
+0=white
+1=black
+
+pattern 1:  w,b,w | 1,2,1 | 0,1,0
+
+pattern 2:  w,b,w,b,w  | 1,2,1,2,1 | 0,1,0,1,0
+
+pattern 3:  w,b,w,b,w,b,w | 1,2,1,2,1,2,1 | 0,1,0,1,0,1,0
+
+pattern 4:  w | 1 | 0
+
+Data struct:
+1, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 4
+
+[0,1,0]
+[0,1,0,1,0]  +1 "1,0"
+[0,1,0,1,0,1,0] +2 "1,0"
+[0,1,0,1,0] +1 "1,0"
+[0,1,0,1,0,1,0] +2 "1,0"
+[0,1,0,1,0] +1 "1,0"
+[0,1,0,1,0,1,0] +2 "1,0"
+[0,1,0,1,0] +1 "1,0"
+[0,1,0,1,0,1,0] +2 "1,0"
+[0,1,0,1,0] +1 "1,0"
+[0,1,0,1,0,1,0] +2 "1,0"
+[0,1,0,1,0] +1 "1,0
+[0,1,0,1,0,1,0] +2 "1,0"
+[0,1,0,1,0] +1 "1,0"
+[0,1,0,1,0,1,0] +2 "1,0"
+[0] -1 "1,0"
+
+basic:  x, x+1, x+2, x+1, x+2, x+1, x+2, x+1, x+2, x+1, x+2, x+1, x+2, x+1, x+2, x-1
+translated to:
+0,1,2,1,2,1,2,1,2,1,2,1,2,1,2,-1
+
+
+
+x=3
+x=5
+x=7
+.
+six more
+.
+x=1
+
+therefore
+
+0 = 3 slots, 
+1 = 5 slots
+2 = 7 slots
+-1 = 1 slot
+
+
+Generating the data
+
+keys = "0,1,0"
+key  = ""
+
+for x in [0,1,2,1,2,1,2,1,2,1,2,1,2,1,2,-1]; do
+  if x == 0 
+    key = "0,1,0"
+  else if x == 1
+    key = "0,1,0,1,0"
+  else if x == 2
+    key = "0,1,0,1,0,1,0"
+  else if x == -1
+    key = "0"
+
+  keys 
+
+
+
+
+
+
+
+
+100
+
+100 - 88 = 12
+
+1000 / 88
+
+while x > 88; do
+
+
+  if x < 89 {
+    
+  } else {
+    x -= 88
+
+  }
+
+
